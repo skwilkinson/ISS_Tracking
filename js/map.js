@@ -59,6 +59,7 @@ function updatePosition() {
 function startUpdate() {
 	liveUpdate = setInterval(function(){updatePosition()},1000);
 	updatePosition();
+	alert("This executes");
 }
 
 function stopUpdate() {
