@@ -17,13 +17,11 @@ var xmlDoc=xmlhttp.responseXML;
 
 i = 0;
 j = i+1;
-	alert("4x");
+
 var x=xmlDoc.getElementsByTagName("wmc__TEOSite");
-	alert("4y");
 var y=xmlDoc.getElementsByTagName("TGeoCoordsEx");
-	alert("4z");
+
 addTable();
-alert("5");
 }
 
 function goToNextSite()
