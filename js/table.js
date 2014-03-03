@@ -9,6 +9,7 @@ var j;
 
 function initialize()
 {
+	alert("yooo");
 var mytable=document.getElementById("sitesTable");
 
 if (window.XMLHttpRequest)
