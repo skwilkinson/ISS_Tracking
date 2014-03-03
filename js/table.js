@@ -2,7 +2,7 @@
  * @author Dylon
  * Fetches info from xml file and displays it in a table
  */
- document.write("YOOOOO");
+alert("YOOOO");
 if (window.XMLHttpRequest)
   {// code for IE7+, Firefox, Chrome, Opera, Safari
   xmlhttp=new XMLHttpRequest();
