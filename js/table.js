@@ -20,7 +20,7 @@ j = i+1;
 x=xmlDoc.getElementsByTagName('wmc__TEOSite');
 y=xmlDoc.getElementsByTagName('TGeoCoordsEx');
 
-var mytable=document.getElementById("sitesTable")
+var mytable=document.getElementById("sitesTable");
 addTable();
 document.write("<table border='1'>");
 document.write("</table>");
@@ -50,32 +50,32 @@ addTable();
 function deleteTable()
 {
 while (mytable.rows.length>0) //deletes table
-mytable.deleteRow(0) 
+mytable.deleteRow(0); 
 }    
     
 function addTable()
 {
-var newrow=mytable.insertRow(-1) //add new row to end of table
-var newcell=newrow.insertCell(0) //insert new cell to row
-newcell.innerHTML=i+1
-var newcell=newrow.insertCell(0) //insert new cell to row
-newcell.innerHTML="Site #"
+var newrow=mytable.insertRow(-1); //add new row to end of table
+var newcell=newrow.insertCell(0); //insert new cell to row
+newcell.innerHTML=i+1;
+var newcell=newrow.insertCell(0); //insert new cell to row
+newcell.innerHTML="Site #";
 
-var newrow=mytable.insertRow(-1) //add new row to end of table
-var newcell=newrow.insertCell(0) //insert new cell to row
-newcell.innerHTML=x[i].getAttribute('Nomenclature')
-var newcell=newrow.insertCell(0) //insert new cell to row
-newcell.innerHTML="Location"
+var newrow=mytable.insertRow(-1); //add new row to end of table
+var newcell=newrow.insertCell(0); //insert new cell to row
+newcell.innerHTML=x[i].getAttribute('Nomenclature');
+var newcell=newrow.insertCell(0); //insert new cell to row
+newcell.innerHTML="Location";
 
-var newrow=mytable.insertRow(-1) //add new row to end of table
-var newcell=newrow.insertCell(0) //insert new cell to row
-newcell.innerHTML=y[i].getAttribute('lat') + ", " + y[i].getAttribute('lon')
-var newcell=newrow.insertCell(0) //insert new cell to row
-newcell.innerHTML="Lat,Lon"
+var newrow=mytable.insertRow(-1); //add new row to end of table
+var newcell=newrow.insertCell(0); //insert new cell to row
+newcell.innerHTML=y[i].getAttribute('lat') + ", " + y[i].getAttribute('lon');
+var newcell=newrow.insertCell(0); //insert new cell to row
+newcell.innerHTML="Lat,Lon";
 
-var newrow=mytable.insertRow(-1) //add new row to end of table
-var newcell=newrow.insertCell(0) //insert new cell to row
+var newrow=mytable.insertRow(-1); //add new row to end of table
+var newcell=newrow.insertCell(0); //insert new cell to row
 newcell.innerHTML=x[i].getAttribute('Notes');
-var newcell=newrow.insertCell(0) //insert new cell to row
-newcell.innerHTML="Notes"
+var newcell=newrow.insertCell(0); //insert new cell to row
+newcell.innerHTML="Notes";
 }
