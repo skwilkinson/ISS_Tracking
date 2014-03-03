@@ -24,14 +24,16 @@ if (window.XMLHttpRequest)
   {// code for IE7+, Firefox, Chrome, Opera, Safari
   xmlhttp=new XMLHttpRequest();
   }
+  alert("3");
 else
   {// code for IE6, IE5
   xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
   }
+  alert("4");
 xmlhttp.open("GET","EOSitesDaily.xml",false);
 xmlhttp.send();
 xmlDoc=xmlhttp.responseXML; 
-alert("3");
+alert("5");
 
 i = 0;
 j = i+1;
