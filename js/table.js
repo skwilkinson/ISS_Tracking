@@ -31,10 +31,10 @@ alert("5");
 
 i = 0;
 j = i+1;
-
+	alert("4a");
 x=xmlDoc.getElementsByTagName('wmc__TEOSite');
 y=xmlDoc.getElementsByTagName('TGeoCoordsEx');
-	alert("4");
+	alert("4b");
 addTable();
 alert("5");
 }
