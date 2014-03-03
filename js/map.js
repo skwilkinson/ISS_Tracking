@@ -31,10 +31,13 @@ function initialize()
 	});
 
 	crossHair.setMap(map);
+	liveUpdate = setInterval(function(){updatePosition()},1000);
+
 }
 
 var map;
 var crossHair;
+var liveUpdate;
 
 function updatePosition() {
 
@@ -52,7 +55,6 @@ function updatePosition() {
   });
 
 }
-var liveUpdate = setInterval(function(){updatePosition()},1000);
 
 function startUpdate() {
 	liveUpdate = setInterval(function(){updatePosition()},1000);
