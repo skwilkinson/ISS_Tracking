@@ -2,7 +2,7 @@
  * @author Dylon
  * Fetches info from xml file and displays it in a table
  */
-if (window.XMLHttpRequest)
+/*if (window.XMLHttpRequest)
   {// code for IE7+, Firefox, Chrome, Opera, Safari
   xmlhttp=new XMLHttpRequest();
   }
@@ -35,6 +35,16 @@ deleteTable();
 addTable();
 }
 }
+*/
+var mytable=document.getElementById("sitesTable")
+
+var newrow=mytable.insertRow(-1) //add new row to end of table
+var newcell=newrow.insertCell(0) //insert new cell to row
+newcell.innerHTML="yooo"
+var newcell=newrow.insertCell(0) //insert new cell to row
+newcell.innerHTML="Site #"
+document.write("<table border='1'>");
+document.write("</table>");
 
 function goToPreviousSite()
 {
