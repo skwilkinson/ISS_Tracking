@@ -16,6 +16,7 @@ addTable();
 document.write("<table border='1'>");
 document.write("</table>");
 */
+alert("heyyy");
 if (window.XMLHttpRequest)
   {// code for IE7+, Firefox, Chrome, Opera, Safari
   xmlhttp=new XMLHttpRequest();
