@@ -10,7 +10,14 @@ var j;
 function initialize()
 {
 	alert("yo1");
+	
 var mytable=document.getElementById("sitesTable");
+
+var newrow=mytable.insertRow(-1); //add new row to end of table
+var newcell=newrow.insertCell(0); //insert new cell to row
+newcell.innerHTML=1;
+var newcell=newrow.insertCell(0); //insert new cell to row
+newcell.innerHTML="Site #";
 
 if (window.XMLHttpRequest)
   {// code for IE7+, Firefox, Chrome, Opera, Safari
