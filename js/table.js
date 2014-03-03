@@ -9,8 +9,6 @@ var j;
 
 function initialize()
 {
-	alert("1");
-	
 var mytable=document.getElementById("sitesTable");
 
 var newrow=mytable.insertRow(-1); //add new row to end of table
@@ -18,22 +16,19 @@ var newcell=newrow.insertCell(0); //insert new cell to row
 newcell.innerHTML=1;
 var newcell=newrow.insertCell(0); //insert new cell to row
 newcell.innerHTML="Site #";
-alert("2");
 
 xmlhttp=new XMLHttpRequest();
 
-alert("3 new");
-
 xmlhttp.open("GET","EOSitesDaily.xml",true);
 xmlhttp.send();
-xmlDoc=xmlhttp.responseXML; 
-alert("5");
+xmlDoc=xmlhttp.responseText;
+newcell.innerHTML=xmlDoc;
 
 i = 0;
 j = i+1;
 	alert("4a");
-var x=xmlDoc.getElementsByTagName("wmc__TEOSite");
-var y=xmlDoc.getElementsByTagName("TGeoCoordsEx");
+x=xmlDoc.getElementsByTagName("wmc__TEOSite");
+y=xmlDoc.getElementsByTagName("TGeoCoordsEx");
 	alert("4b");
 addTable();
 alert("5");
