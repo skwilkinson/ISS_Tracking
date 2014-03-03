@@ -32,12 +32,12 @@ function initialize()
 
 	crossHair.setMap(map);
 	liveUpdate = setInterval(function(){updatePosition()},1000);
-
 }
 
 var map;
 var crossHair;
 var liveUpdate;
+
 
 function updatePosition() {
 
@@ -51,13 +51,13 @@ function updatePosition() {
 	
 	var ISS_loc;
 	map.panTo(ISS_loc);
-    crossHair.setPosition(ISS_loc);
+    	crossHair.setPosition(ISS_loc);
   });
 
 }
 
 function startUpdate() {
-	liveUpdate = setInterval(function(){updatePosition()},1000);
+	var liveUpdate = setInterval(function(){updatePosition()},1000);
 	updatePosition();
 	alert("Start executes");
 }
