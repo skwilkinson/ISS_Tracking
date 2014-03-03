@@ -5,19 +5,17 @@
 function initialize()
 {
 var mytable=document.getElementById("sitesTable");
-for (var i=0; i<3; i++)
+/*for (var i=0; i<3; i++)
 {
 var newrow=mytable.insertRow(-1); //add new row to end of table
 var newcell=newrow.insertCell(0); //insert new cell to row
 newcell.innerHTML="This is row number: "+mytable.rows.length;
 }
 
-
-var mytable=document.getElementById("sitesTable");
 addTable();
 document.write("<table border='1'>");
 document.write("</table>");
-
+*/
 if (window.XMLHttpRequest)
   {// code for IE7+, Firefox, Chrome, Opera, Safari
   xmlhttp=new XMLHttpRequest();
