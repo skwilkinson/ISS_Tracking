@@ -9,7 +9,7 @@ var j;
 
 function initialize()
 {
-	alert("hey1");
+	alert("1");
 	
 var mytable=document.getElementById("sitesTable");
 
@@ -18,7 +18,7 @@ var newcell=newrow.insertCell(0); //insert new cell to row
 newcell.innerHTML=1;
 var newcell=newrow.insertCell(0); //insert new cell to row
 newcell.innerHTML="Site #";
-alert("yo1");
+alert("2");
 
 if (window.XMLHttpRequest)
   {// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -31,16 +31,16 @@ else
 xmlhttp.open("GET","EOSitesDaily.xml",false);
 xmlhttp.send();
 xmlDoc=xmlhttp.responseXML; 
-alert("yo1");
+alert("3");
 
 i = 0;
 j = i+1;
 
 x=xmlDoc.getElementsByTagName('wmc__TEOSite');
 y=xmlDoc.getElementsByTagName('TGeoCoordsEx');
-	alert("yo2");
+	alert("4");
 addTable();
-alert("yo3");
+alert("5");
 }
 
 function goToNextSite()
