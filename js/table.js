@@ -2,6 +2,8 @@
  * @author Dylon
  * Fetches info from xml file and displays it in a table
  */
+var x;
+var y;
 var i;
 var j;
 
@@ -13,13 +15,13 @@ xmlhttp=new XMLHttpRequest();
 
 xmlhttp.open("GET","EOSitesDaily.xml",false);
 xmlhttp.send();
-var xmlDoc=xmlhttp.responseXML;
+xmlDoc=xmlhttp.responseXML; 
 
 i = 0;
 j = i+1;
 
-var x=xmlDoc.getElementsByTagName("wmc__TEOSite");
-var y=xmlDoc.getElementsByTagName("TGeoCoordsEx");
+x=xmlDoc.getElementsByTagName('wmc__TEOSite');
+y=xmlDoc.getElementsByTagName('TGeoCoordsEx');
 
 addTable();
 }
