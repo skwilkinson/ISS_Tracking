@@ -18,6 +18,7 @@ var newcell=newrow.insertCell(0); //insert new cell to row
 newcell.innerHTML=1;
 var newcell=newrow.insertCell(0); //insert new cell to row
 newcell.innerHTML="Site #";
+alert("yo1");
 
 if (window.XMLHttpRequest)
   {// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -30,6 +31,7 @@ else
 xmlhttp.open("GET","EOSitesDaily.xml",false);
 xmlhttp.send();
 xmlDoc=xmlhttp.responseXML; 
+alert("yo1");
 
 i = 0;
 j = i+1;
