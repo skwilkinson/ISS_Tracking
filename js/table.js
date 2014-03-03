@@ -22,8 +22,9 @@ alert("2");
 
 xmlhttp=new XMLHttpRequest();
 
-  alert("4");
-xmlhttp.open("GET","EOSitesDaily.xml",false);
+alert("3 new");
+
+xmlhttp.open("GET","EOSitesDaily.xml",true);
 xmlhttp.send();
 xmlDoc=xmlhttp.responseXML; 
 alert("5");
