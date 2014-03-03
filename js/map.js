@@ -59,11 +59,12 @@ function updatePosition() {
 function startUpdate() {
 	liveUpdate = setInterval(function(){updatePosition()},1000);
 	updatePosition();
-	alert("This executes");
+	alert("Start executes");
 }
 
 function stopUpdate() {
 	window.clearInterval(liveUpdate);
+	alert("Stop executes");
 }
 function goToPhilly()
 {
