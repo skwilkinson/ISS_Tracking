@@ -21,8 +21,7 @@ xmlhttp=new XMLHttpRequest();
 
 xmlhttp.open("GET","EOSitesDaily.xml",true);
 xmlhttp.send();
-xmlDoc=xmlhttp.responseText;
-newcell.innerHTML=xmlDoc;
+xmlDoc=xmlhttp.responseXML;
 
 i = 0;
 j = i+1;
