@@ -36,9 +36,9 @@ j = i+1;
 
 x=xmlDoc.getElementsByTagName('wmc__TEOSite');
 y=xmlDoc.getElementsByTagName('TGeoCoordsEx');
-
+	alert("yo2");
 addTable();
-alert("yo2");
+alert("yo3");
 }
 
 function goToNextSite()
