@@ -9,7 +9,7 @@ var j;
 
 function initialize()
 {
-	alert("yo1");
+	alert("hey1");
 	
 var mytable=document.getElementById("sitesTable");
 
