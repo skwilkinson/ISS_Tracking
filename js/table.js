@@ -2,8 +2,6 @@
  * @author Dylon
  * Fetches info from xml file and displays it in a table
  */
-function initialize()
-{
 if (window.XMLHttpRequest)
   {// code for IE7+, Firefox, Chrome, Opera, Safari
   xmlhttp=new XMLHttpRequest();
@@ -26,7 +24,6 @@ var mytable=document.getElementById("sitesTable")
 addTable();
 document.write("<table border='1'>");
 document.write("</table>");
-}
 
 function goToNextSite()
 {
