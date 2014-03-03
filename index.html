@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,24 +9,20 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
 
-    <title>Starter Template for Bootstrap</title>
+    <title>Group 2 ISS CEO Assist</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/starter-template.css" rel="stylesheet">
-    <!-- <style type="text/css">
-      html { height: 100% }
-      body { height: 100%; margin: 0; padding: 0 }
-      #googleMap { height: 100% }
-    </style> -->
+    <!-- <link href="css/bootstrap-theme.css" rel="stylesheet"> -->
+
 	<script	src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script>
 	<script src="js/map.js"></script>
   </head>
 
   <body>
-
+	<!-- Top Navigation Bar -->
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -48,14 +44,25 @@
       </div>
     </div>
 
-    <div class="container">
 
-      <div class="starter-template">
-        <p id="demo"> </p>
-		<button type="button" onclick="goToPhilly()">Philadelphia</button>
-		<button type="button" onclick="goToLondon()">London</button>
-		<div id="googleMap" style="width:1000px;height:600px"> </div>
-      </div>
+	<div class="container-fluid">
+		
+	    <div class="row">
+	        <div class="col-md-3">
+	            Sidebar content
+        		<p id="demo"> </p>
+				<p>Let's start typing shit.</p>
+				<button type="button" onclick="updatePosition()">Start Live Update</button>
+				<button type="button" onclick="stopUpdate()">Stop Live Update</button>
+		
+	        </div>
+	        <div class="col-md-9">
+	            Body content
+	            <div id="googleMap" style="width:100%;height:95%;"> </div>
+
+	        </div>
+    	</div>
+			            
 
     </div><!-- /.container -->
 
