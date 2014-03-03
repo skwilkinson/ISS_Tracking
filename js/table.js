@@ -9,6 +9,7 @@ var j;
 
 function initialize()
 {
+	alert("yo1");
 var mytable=document.getElementById("sitesTable");
 
 if (window.XMLHttpRequest)
@@ -30,6 +31,7 @@ x=xmlDoc.getElementsByTagName('wmc__TEOSite');
 y=xmlDoc.getElementsByTagName('TGeoCoordsEx');
 
 addTable();
+alert("yo2");
 }
 
 function goToNextSite()
