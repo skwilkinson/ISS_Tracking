@@ -25,10 +25,11 @@ var xmlDoc=xmlhttp.responseXML;
 
 i = 0;
 j = i+1;
-	alert("4a");
+	alert("4x");
 x=xmlDoc.getElementsByTagName("wmc__TEOSite");
+	alert("4y");
 y=xmlDoc.getElementsByTagName("TGeoCoordsEx");
-	alert("4b");
+	alert("4z");
 addTable();
 alert("5");
 }
