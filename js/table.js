@@ -35,7 +35,7 @@ j = i+1;
 
 x=xmlDoc.getElementsByTagName('wmc__TEOSite');
 y=xmlDoc.getElementsByTagName('TGeoCoordsEx');
-}
+
 
 addTable();
 document.write("<table border='1'>");
