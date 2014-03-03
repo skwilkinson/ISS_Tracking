@@ -5,6 +5,11 @@
 function initialize()
 {
 alert("YOOOO");
+var mytable=document.getElementById("sitesTable");
+addTable();
+document.write("<table border='1'>");
+document.write("</table>");
+
 if (window.XMLHttpRequest)
   {// code for IE7+, Firefox, Chrome, Opera, Safari
   xmlhttp=new XMLHttpRequest();
@@ -23,7 +28,6 @@ j = i+1;
 x=xmlDoc.getElementsByTagName('wmc__TEOSite');
 y=xmlDoc.getElementsByTagName('TGeoCoordsEx');
 
-var mytable=document.getElementById("sitesTable");
 addTable();
 document.write("<table border='1'>");
 document.write("</table>");
