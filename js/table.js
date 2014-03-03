@@ -20,15 +20,8 @@ var newcell=newrow.insertCell(0); //insert new cell to row
 newcell.innerHTML="Site #";
 alert("2");
 
-if (window.XMLHttpRequest)
-  {// code for IE7+, Firefox, Chrome, Opera, Safari
-  xmlhttp=new XMLHttpRequest();
-  }
-  alert("3");
-else
-  {// code for IE6, IE5
-  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-  }
+xmlhttp=new XMLHttpRequest();
+
   alert("4");
 xmlhttp.open("GET","EOSitesDaily.xml",false);
 xmlhttp.send();
