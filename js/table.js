@@ -11,7 +11,7 @@ var newrow=mytable.insertRow(-1); //add new row to end of table
 var newcell=newrow.insertCell(0); //insert new cell to row
 newcell.innerHTML="This is row number: "+mytable.rows.length;
 }
-alert("HEYYY");
+
 
 
 var mytable=document.getElementById("sitesTable");
