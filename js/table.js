@@ -45,7 +45,7 @@ var newcell=newrow.insertCell(0) //insert new cell to row
 newcell.innerHTML="Site #"
 document.write("<table border='1'>");
 document.write("</table>");
-
+document.write("yoooooooo");
 function goToPreviousSite()
 {
 if(i>0)
