@@ -56,6 +56,30 @@
 				<button type="button" onclick="stopUpdate()">Stop Live Update</button>
 				<br>
 				<table id="sitesTable" width="50%">
+				<script>
+					if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.open("GET","EOSitesDaily.xml",false);
+xmlhttp.send();
+xmlDoc=xmlhttp.responseXML; 
+
+i = 0;
+j = i+1;
+
+x=xmlDoc.getElementsByTagName('wmc__TEOSite');
+y=xmlDoc.getElementsByTagName('TGeoCoordsEx');
+
+var mytable=document.getElementById("sitesTable")
+addTable();
+document.write("<table border='1'>");
+document.write("</table>");
+				</script>
 				<br>
 				<button type="button" onclick="goToPreviousSite()">Previous Site</button>
 				<button type="button" onclick="goToNextSite()">Next Site</button>
