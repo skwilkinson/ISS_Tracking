@@ -5,6 +5,8 @@
 function initialize()
 {
 alert("YOOOO");
+document.write("YOOOO");
+alert("HEYYY");
 var mytable=document.getElementById("sitesTable");
 addTable();
 document.write("<table border='1'>");
@@ -71,19 +73,19 @@ newcell.innerHTML="Site #";
 
 var newrow=mytable.insertRow(-1); //add new row to end of table
 var newcell=newrow.insertCell(0); //insert new cell to row
-//newcell.innerHTML=x[i].getAttribute('Nomenclature');
+newcell.innerHTML=x[i].getAttribute('Nomenclature');
 var newcell=newrow.insertCell(0); //insert new cell to row
 newcell.innerHTML="Location";
 
 var newrow=mytable.insertRow(-1); //add new row to end of table
 var newcell=newrow.insertCell(0); //insert new cell to row
-//newcell.innerHTML=y[i].getAttribute('lat') + ", " + y[i].getAttribute('lon');
+newcell.innerHTML=y[i].getAttribute('lat') + ", " + y[i].getAttribute('lon');
 var newcell=newrow.insertCell(0); //insert new cell to row
 newcell.innerHTML="Lat,Lon";
 
 var newrow=mytable.insertRow(-1); //add new row to end of table
 var newcell=newrow.insertCell(0); //insert new cell to row
-//newcell.innerHTML=x[i].getAttribute('Notes');
+newcell.innerHTML=x[i].getAttribute('Notes');
 var newcell=newrow.insertCell(0); //insert new cell to row
 newcell.innerHTML="Notes";
 }
