@@ -17,7 +17,7 @@ newcell.innerHTML="Site #";
 
 xmlhttp=new XMLHttpRequest();
 
-xmlhttp.open("GET","EOSitesDaily.xml",true);
+xmlhttp.open("GET","EOSitesDaily.xml",false);
 xmlhttp.send();
 var xmlDoc=xmlhttp.responseXML;
 
