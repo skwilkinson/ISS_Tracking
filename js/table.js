@@ -5,8 +5,11 @@
 function initialize()
 {
 alert("YOOOO");
-document.write("YOOOO");
+var mytable=document.getElementById("sitesTable");
+
 alert("HEYYY");
+
+
 var mytable=document.getElementById("sitesTable");
 addTable();
 document.write("<table border='1'>");
