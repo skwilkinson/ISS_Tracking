@@ -2,10 +2,13 @@
  * @author Silas
  */
 
-var myCenter=new google.maps.LatLng(51.508742,-0.120850);
+var myCenter;
+var lat;
+var lon;
 
 function initialize()
 {
+	updatePosition();
 	var mapProp = {
   	center: myCenter,
   	zoom:7,
@@ -18,6 +21,8 @@ function initialize()
   	};
 
   	map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+  	
+  	var currentPosTable=document.getElementById("currentPosTable");
   	
 	var image = new google.maps.MarkerImage("ISS.png",
       new google.maps.Size(21, 21),     // size
@@ -52,7 +57,27 @@ function updatePosition() {
 	var ISS_loc;
 	map.panTo(ISS_loc);
     	crossHair.setPosition(ISS_loc);
+    
+    uptatePosOutput();
   });
+
+function uptatePosOutput()
+{
+	latShort = lat.toFixed(4);
+	lonShort = lon.toFixed(4);
+	while (currentPosTable.rows.length>0) //deletes table
+	currentPosTable.deleteRow(0); 
+	
+	var newrow=currentPosTable.insertRow(-1); //add new row to end of table
+	var newcell=newrow.insertCell(0); //insert new cell to row
+	newcell.innerHTML="Current Position";
+	
+	var newrow=currentPosTable.insertRow(-1); //add new row to end of table
+	var newcell=newrow.insertCell(0); //insert new cell to row
+	newcell.innerHTML="Lon: "+lonShort;
+	var newcell=newrow.insertCell(0); //insert new cell to row
+	newcell.innerHTML="Lat: "+latShort;
+}
 
 }
 
@@ -81,4 +106,5 @@ function goToLondon()
 };
 
 google.maps.event.addDomListener(window, 'load', initialize);
+
 
