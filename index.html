@@ -54,8 +54,11 @@
 				<p>Let's start typing shit.</p>
 				<button type="button" onclick="updatePosition()">Start Live Update</button>
 				<button type="button" onclick="stopUpdate()">Stop Live Update</button>
-				<br>
+				<br><br>
 				<table id="sitesTable" width="200px" height="200px" border="1"></table>
+				<body onload="initialize()"></body>
+				<br>
+				<table id="currentPosTable" width="100px" height="100px" border="1"></table>
 				<body onload="initialize()"></body>
 				<br>
 				<button type="button" onclick="goToPreviousSite()">Previous Site</button>
@@ -78,3 +81,4 @@
     <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
+
