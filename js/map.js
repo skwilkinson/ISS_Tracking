@@ -5,6 +5,8 @@
 var myCenter;
 var lat;
 var lon;
+var p = new Boolean();
+p = true;
 
 function initialize()
 {
@@ -55,7 +57,9 @@ function updatePosition() {
 	}
 	
 	var ISS_loc;
-	map.panTo(ISS_loc);
+	if (p){
+		map.panTo(ISS_loc);	
+	}
     	crossHair.setPosition(ISS_loc);
     
     uptatePosOutput();
@@ -82,14 +86,11 @@ function uptatePosOutput()
 }
 
 function startUpdate() {
-	liveUpdate = setInterval(function(){updatePosition()},1000);
-	updatePosition();
-	//alert("Start executes");
+	p = true;
 }
 
 function stopUpdate() {
-	window.clearInterval(liveUpdate);
-	//alert("Stop executes");
+	p = false;
 }
 function goToPhilly()
 {
