@@ -84,12 +84,12 @@ function uptatePosOutput()
 function startUpdate() {
 	liveUpdate = setInterval(function(){updatePosition()},1000);
 	updatePosition();
-	alert("Start executes");
+	//alert("Start executes");
 }
 
 function stopUpdate() {
 	window.clearInterval(liveUpdate);
-	alert("Stop executes");
+	//alert("Stop executes");
 }
 function goToPhilly()
 {
