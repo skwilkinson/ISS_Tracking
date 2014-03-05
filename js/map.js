@@ -82,7 +82,7 @@ function uptatePosOutput()
 }
 
 function startUpdate() {
-	var liveUpdate = setInterval(function(){updatePosition()},1000);
+	liveUpdate = setInterval(function(){updatePosition()},1000);
 	updatePosition();
 	alert("Start executes");
 }
