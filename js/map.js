@@ -1,5 +1,6 @@
 /**
  * @author Silas
+ * Displays map and updates ISS location
  */
 
 var myCenter;
@@ -7,7 +8,15 @@ var lat;
 var lon;
 var p = new Boolean();
 p = true;
+var issImage;
+var targetImage;
+var targetCrossHair;
+var Target_loc;
+var map;
+var issCrossHair;
+var liveUpdate;
 
+//initializes map upon startup
 function initialize()
 {
 	updatePosition();
@@ -26,28 +35,37 @@ function initialize()
   	
   	var currentPosTable=document.getElementById("currentPosTable");
   	
-	var image = new google.maps.MarkerImage("ISS.png",
+  	//ISS crosshair image
+	var issImage = new google.maps.MarkerImage("ISS.png",
       new google.maps.Size(21, 21),     // size
       new google.maps.Point(0, 0),      // origin
       new google.maps.Point(10, 10));   // anchor
       
-  	crossHair = new google.maps.Marker({
+  	issCrossHair = new google.maps.Marker({
 	    position: map.getCenter(),
 	    map: map,
-	    icon: image
+	    icon: issImage
 	});
 
-	crossHair.setMap(map);
+	//target crosshair image
+	var targetImage = new google.maps.MarkerImage("ISS.png",
+      new google.maps.Size(21, 21),     // size
+      new google.maps.Point(0, 0),      // origin
+      new google.maps.Point(10, 10));   // anchor
+      
+  	targetCrossHair = new google.maps.Marker({
+	    position: map.getCenter(),
+	    map: map,
+	    icon: targetImage
+});
+
+	issCrossHair.setMap(map);
 	liveUpdate = setInterval(function(){updatePosition()},1000);
 }
 
-var map;
-var crossHair;
-var liveUpdate;
-
-
 function updatePosition() {
 
+	//goes to this website and fetches current ISS position
 	$.getJSON('http://api.open-notify.org/iss-now.json?callback=?', function(data) 
 	{
     if (data) {
@@ -55,34 +73,34 @@ function updatePosition() {
 		lon = data.iss_position.longitude;
 		ISS_loc = new google.maps.LatLng(lat,lon);
 	}
-	
+
+	//updates map to move to current ISS location
 	var ISS_loc;
 	if (p){
 		map.panTo(ISS_loc);	
 	}
-    	crossHair.setPosition(ISS_loc);
+    	issCrossHair.setPosition(ISS_loc);
     
     uptatePosOutput();
   });
 
+//outputs ISS location to table
 function uptatePosOutput()
 {
+	var table = document.getElementById("currentPosTable").createCaption();
+	table.innerHTML = "<b>Current ISS Position</b>";
+	
 	latShort = lat.toFixed(4);
 	lonShort = lon.toFixed(4);
 	while (currentPosTable.rows.length>0) //deletes table
 	currentPosTable.deleteRow(0); 
-	
-	var newrow=currentPosTable.insertRow(-1); //add new row to end of table
-	var newcell=newrow.insertCell(0); //insert new cell to row
-	newcell.innerHTML="Current Position";
-	
+
 	var newrow=currentPosTable.insertRow(-1); //add new row to end of table
 	var newcell=newrow.insertCell(0); //insert new cell to row
 	newcell.innerHTML="Lon: "+lonShort;
 	var newcell=newrow.insertCell(0); //insert new cell to row
 	newcell.innerHTML="Lat: "+latShort;
 }
-
 }
 
 function startUpdate() {
@@ -92,20 +110,16 @@ function startUpdate() {
 function stopUpdate() {
 	p = false;
 }
-function goToPhilly()
-{
-	var philly = new google.maps.LatLng(39.9500,-75.1700);
-	map.setZoom(9);
-	map.setCenter(philly);
-};
 
-function goToLondon()
+//moves map to current target location
+function goToTargetPosition()
 {
-	var london =new google.maps.LatLng(51.508742,-0.120850);
+	var targetPos = new google.maps.LatLng(targetLat,targetLon);
 	map.setZoom(9);
-	map.setCenter(london);
-};
+	map.setCenter(targetPos);
+	Target_loc = new google.maps.LatLng(targetLat,targetLon);
+	targetCrossHair.setPosition(Target_loc);
+}
 
 google.maps.event.addDomListener(window, 'load', initialize);
-
 
