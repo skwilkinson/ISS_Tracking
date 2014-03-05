@@ -6,13 +6,16 @@ var x;
 var y;
 var i;
 var j;
+var targetLat;
+var targetLon;
 
-function initialize()
+function initialize()  //sets up tables and retrieves xml file on startup
 {
 var mytable=document.getElementById("sitesTable");
 
 xmlhttp=new XMLHttpRequest();
 
+//Retrieves .xml file (in same folder) with target information
 xmlhttp.open("GET","EOSitesDaily.xml",false);
 xmlhttp.send();
 xmlDoc=xmlhttp.responseXML; 
@@ -24,22 +27,22 @@ x=xmlDoc.getElementsByTagName('wmc__TEOSite');
 y=xmlDoc.getElementsByTagName('TGeoCoordsEx');
 numbSites = xmlDoc.getElementsByTagName('wmc__TEOSite').length;
 
-
 addTable();
 }
 
+//upon button clicked, refreshes information in table to reflect next target
 function goToNextSite()
 {
-if(i<5)
+if(i<numbSites-1)
 {
 i = i+1;
 j = j+1;
-
 deleteTable();	
 addTable();
 }
 }
 
+//upon button clicked, refreshes information in table to reflect previous target
 function goToPreviousSite()
 {
 if(i>0)
@@ -51,13 +54,16 @@ addTable();
 }
 }
     
+//deletes table
 function deleteTable()
 {
 var mytable=document.getElementById("sitesTable");
 while (mytable.rows.length>0) //deletes table
 mytable.deleteRow(0); 
 }    
-    
+   
+//replaces table with updated information   
+//parses information from .xml file into relevant categories 
 function addTable()
 {
 var mytable=document.getElementById("sitesTable");
@@ -111,13 +117,14 @@ var newcell=newrow.insertCell(0); //insert new cell to row
 
 var pa = str.indexOf("lat",o+1);
 var pb = str.indexOf(",",pa);
-var lat = str.substring(pa,pb);
+targetLat = str.substring(pa+5,pb);
 
 var qa = str.indexOf("lon",o+1);
 var qb = str.indexOf("at",pb);
-var lon = str.substring(qa,qb);
-newcell.innerHTML = lat +", "+ lon;
+targetLon = str.substring(qa+5,qb);
+newcell.innerHTML = targetLat +", "+ targetLon;
 
 var newcell=newrow.insertCell(0); //insert new cell to row
 newcell.innerHTML="Lat, Long";
 }
+
