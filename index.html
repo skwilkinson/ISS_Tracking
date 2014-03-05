@@ -46,30 +46,34 @@
 
 
 	<div class="container-fluid">
-		
+
 	    <div class="row">
 	        <div class="col-md-4">
 	            Sidebar content
         		<p id="demo"> </p>
-				<p>Let's start typing shit.</p>
+				<p>yooo</p>
+				<table id="currentPosTable" width="200px" height="50px" border="1"></table>
+				<br>
 				<button type="button" onclick="startUpdate()">Lock on ISS</button>
 				<button type="button" onclick="stopUpdate()">Disable Lock on ISS</button>
 				<br><br>
-				<table id="sitesTable" width="200px" height="200px" border="1"></table>
-				<body onload="initialize()"></body>
-				<br>
-				<table id="currentPosTable" width="100px" height="100px" border="1"></table>
+				<table id="sitesTable" width="250px" height="200px" border="1"></table>
 				<body onload="initialize()"></body>
 				<br>
 				<button type="button" onclick="goToPreviousSite()">Previous Site</button>
 				<button type="button" onclick="goToNextSite()">Next Site</button>
+				<br><br>
+				<button type="button" onclick="goToTargetPosition()">Go To Target Position</button>
+				<br>
+				<body onload="initialize()"></body>
+				<br>
 	        </div>
 	        <div class="col-md-8">
 	            Body content
-	           <div id="googleMap" style="width:100%;height:95%;"> </div>
+	           <div id="googleMap" style="width:100%;height:95%;"> </div> 
 	        </div>
     	</div>
-			            
+
 
     </div><!-- /.container -->
 
